@@ -1,5 +1,6 @@
 def solution(operations):
-    queue = []
+    queue = list()
+    
     for element in operations:
         job = element.split(' ')[0]
         value = int(element.split(' ')[1])
