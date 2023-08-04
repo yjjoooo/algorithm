@@ -1,5 +1,3 @@
-import re
-
 def solution(s):
     answer = True
     
