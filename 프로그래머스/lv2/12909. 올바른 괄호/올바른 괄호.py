@@ -1,6 +1,4 @@
 def solution(s):
-    answer = True
-    
     stack = list()
     
     for c in s:
