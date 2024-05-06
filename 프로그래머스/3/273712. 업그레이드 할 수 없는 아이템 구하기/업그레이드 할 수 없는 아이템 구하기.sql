@@ -1,4 +1,5 @@
--- 코드를 작성해주세요
+# 채점 결과
+# 합계: 100.0 / 100.0
 SELECT ITEM_ID, 
     ITEM_NAME,
     RARITY
