@@ -1,3 +1,6 @@
+# 채점 결과
+# 정확성: 100.0
+# 합계: 100.0 / 100.0
 def solution(ingredient):
     answer = 0
     stack = list()
@@ -11,6 +14,9 @@ def solution(ingredient):
         
     return answer
 
+# 채점 결과
+# 정확성: 38.9
+# 합계: 38.9 / 100.0
 # def solution(ingredient):
 #     answer = 0
 #     ingredient_str = ''.join(list(map(lambda x : str(x), ingredient)))
