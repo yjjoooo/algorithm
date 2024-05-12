@@ -1,0 +1,24 @@
+# 채점 결과
+# 합계: 100.0 / 100.0
+WITH EMP_GRADE AS (
+    SELECT EMP_NO,
+        CASE
+            WHEN AVG(SCORE) >= 96 THEN 'S'
+            WHEN AVG(SCORE) >= 90 THEN 'A'
+            WHEN AVG(SCORE) >= 80 THEN 'B' ELSE 'C'
+        END AS "GRADE"
+    FROM HR_GRADE
+    GROUP BY EMP_NO, YEAR
+)
+SELECT HE.EMP_NO, 
+    HE.EMP_NAME,
+    EG.GRADE,
+    CASE
+        WHEN EG.GRADE = 'S' THEN HE.SAL * 0.2
+        WHEN EG.GRADE = 'A' THEN HE.SAL * 0.15
+        WHEN EG.GRADE = 'B' THEN HE.SAL * 0.1 ELSE 0
+    END AS "BONUS"
+FROM HR_EMPLOYEES HE,
+    EMP_GRADE EG
+WHERE HE.EMP_NO = EG.EMP_NO
+ORDER BY 1
