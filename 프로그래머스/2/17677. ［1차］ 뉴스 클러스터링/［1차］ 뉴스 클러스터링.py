@@ -1,6 +1,6 @@
 # 채점 결과
-# 정확성: 92.3
-# 합계: 92.3 / 100.0
+# 정확성: 100.0
+# 합계: 100.0 / 100.0
 import math
 
 def to_list(str):
@@ -17,9 +17,8 @@ def solution(str1, str2):
             dup_list.append(val)
             str2_list.remove(val)
     
-    if len(str1_list) + len(str2_list) > 0:
-        answer = len(dup_list) / (len(str1_list) + len(str2_list))
-
-        return math.floor(answer * 65536)
+    all_list = str1_list + str2_list
+    if len(all_list) > 0:
+        return math.floor(len(dup_list) / len(all_list) * 65536)
     else:
         return 65536
