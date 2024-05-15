@@ -10,15 +10,15 @@ def solution(str1, str2):
     str1_list = to_list(str1)
     str2_list = to_list(str2)
     
-    dup_list = list()
+    intersection = list()
     
     for val in str1_list:
         if val in str2_list:
-            dup_list.append(val)
+            intersection.append(val)
             str2_list.remove(val)
     
-    all_list = str1_list + str2_list
-    if len(all_list) > 0:
-        return math.floor(len(dup_list) / len(all_list) * 65536)
+    union = str1_list + str2_list
+    if len(union) > 0:
+        return math.floor(len(intersection) / len(union) * 65536)
     else:
         return 65536
